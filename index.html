@@ -6,7 +6,7 @@
   <title>Just Oripov - Portfolio</title>
   <link rel="shortcut icon" href="./img/profile.jpg" type="image/x-icon">
   <style>
-        body {
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f5f5f5;
@@ -116,83 +116,18 @@
     </nav>
   </header>
 
-  <section class="section youtube" id="youtube">
-    <h2>YouTube videolar</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/7j6knFAcNNM" title="YouTube Video 1"></iframe>
-        <p><b>🎥Tadbirdan lavha | TOBB ETU</b><br>🔹 Ushbu video 2023-yilda TOBB ETU universitetida bo‘lib o‘tgan Career Day tadbirining muhitini yoritish uchun suratga olingan.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/wPHxUXAhijI" title="YouTube Video 2"></iframe>
-        <p><b>🎥 Tibbiyot yo'nalishida | Intervyu</b><br>🔹 Genotexnologiya rahbari bilan intervyu, bir nechta kamera rakurslari va dron kadrlaridan foydalanilgan.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/IcdLLzi0nFg" title="YouTube Video 3"></iframe>
-        <p><b>🎙 Jinsiy Zaiflik – Tibbiyot Podkasti</b><br>🔹 Minimalist vizual, professional audio va montaj bilan tayyorlangan podkast.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/2rYjYmfIxfs" title="YouTube Video 4"></iframe>
-        <p><b>🎙 Micropenia – Tibbiyot Podkasti</b><br>🔹 Jiddiy atmosfera, sifatli audio va professional montaj.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/I8W9BzgUuiE" title="YouTube Video 5"></iframe>
-        <p><b>🎙 Tez Bo‘shanib qo'yish – Tibbiyot Podkasti</b><br>🔹 Yakka spiker formati, yechimlar, professional audio va montaj.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/90Yk8xTGTa4" title="YouTube Video 6"></iframe>
-        <p><b>🎬 Bolalar Uchun Kulgili Vlog</b><br>🔹 Bolalar tomonidan syomka qilingan, multfilm effektlari bilan boyitilgan.</p>
-      </div>
-    </div>
-  </section>
+  <!-- YouTube bo‘limini bu yerga joylaysiz -->
 
+  <!-- 🔻 REELS BO‘LIMI -->
   <section class="section reels" id="reels">
     <h2>Reels videolar</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/G79DJ8iReSE" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/TaYM3tP1uWI" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/LvzkLekzdRU" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/1Me-CNML6EU" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/YU3gTaml8kw" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/CZ1xHO8A8LY" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/_Z_jG1_QyTY" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/oECbuG9kUIE" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/n1Dw6QNHgTs" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/wO3vergtOU4" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/ymRdBVWC9hI" title="Reels Video 1"></iframe>
-        <p>Reels nomi yoki qisqacha izoh</p>
-      </div>
+    <div class="portfolio-grid" id="reels-container">
+      <!-- Reels videolari JavaScript orqali joylanadi -->
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <button onclick="showPage(-1)" id="prevBtn" disabled>⬅️ Oldingi</button>
+      <button onclick="showPage(1)" id="nextBtn">Keyingi ➡️</button>
+    </div>
   </section>
 
   <section class="section" id="brands">
@@ -201,42 +136,23 @@
       <img src="img/brand1.jpg" alt="Brand 1" class="brand-logo" />
       <img src="img/brand2.jpg" alt="Brand 2" class="brand-logo" />
       <img src="img/brand3.jpg" alt="Brand 3" class="brand-logo" />
-      <img src="img/brand4.jpg" alt="Brand 4" class="brand-logo" />
-      <img src="img/brand5.jpg" alt="Brand 5" class="brand-logo" />
-      <img src="img/brand6.jpg" alt="Brand 6" class="brand-logo" />
-      <img src="img/brand7.jpg" alt="Brand 7" class="brand-logo" />
-      <img src="img/brand8.jpg" alt="Brand 8" class="brand-logo" />
-      <img src="img/brand9.jfif" alt="Brand 9" class="brand-logo" />
-      <img src="img/brand10.jpg" alt="Brand 10" class="brand-logo" />
+      <!-- Ko‘proq logolar qo‘shishingiz mumkin -->
     </div>
   </section>
 
   <section class="section services" id="services">
     <h2>🎬 Video syomka:</h2>
     <ul>
-      <li>Mobilograf (telefon bilan) – 1 soat: 150,000 so‘m</li>
-      <li>Professional kamera bilan – 1 soat: 300,000 so‘m</li>
-      <li>To‘liq kunlik syomka (8 soatgacha) – 2,000,000 so‘m</li>
+      <li>Mobilograf – 150,000 so‘m</li>
+      <li>Kamera bilan – 300,000 so‘m</li>
     </ul>
-    <h2>🎙️ Podcast syomkasi:</h2>
+    <h2>🎙 Podcast:</h2>
     <ul>
-      <li>1 ta kamera bilan – 1 soat: 400,000 so‘m</li>
-      <li>2 ta kamera bilan (multicam) – 1 soat: 600,000 so‘m</li>
-      <li>Audio yozib olish – 1 soat: 300,000 so‘m</li>
-      <li>To‘liq xizmat – 1 soat: 900,000 so‘m</li>
+      <li>Multicam – 600,000 so‘m</li>
     </ul>
-    <h2>✂️ Montaj xizmati:</h2>
+    <h2>✂️ Montaj:</h2>
     <ul>
-      <li>Qisqa video (1 daqiqagacha) – 200,000 so‘m</li>
-      <li>To‘liq montaj (5–10 daqiqa) – 500,000 so‘m</li>
-      <li>Podcast montaji – 600,000 so‘m</li>
-      <li>Reklama, klip yoki maxsus loyiha – Narx kelishiladi</li>
-    </ul>
-    <h2>🚀 Qo‘shimcha xizmatlar:</h2>
-    <ul>
-      <li>Drondan foydalanish – Narx kelishiladi</li>
-      <li>Tezkor montaj – +50% qo‘shimcha to‘lov</li>
-      <li>Ssenariy yozish – 300,000 so‘m</li>
+      <li>Reels – 200,000 so‘m</li>
     </ul>
   </section>
 
@@ -251,5 +167,49 @@
   <footer>
     <p>&copy; 2025 Just Oripov. Barcha huquqlar himoyalangan.</p>
   </footer>
+
+  <!-- 🔻 REELS NAVIGATION SCRIPT -->
+  <script>
+    const reelsData = [
+      "https://www.youtube.com/embed/G79DJ8iReSE",
+      "https://www.youtube.com/embed/TaYM3tP1uWI",
+      "https://www.youtube.com/embed/LvzkLekzdRU",
+      "https://www.youtube.com/embed/1Me-CNML6EU",
+      "https://www.youtube.com/embed/YU3gTaml8kw",
+      "https://www.youtube.com/embed/CZ1xHO8A8LY",
+      "https://www.youtube.com/embed/_Z_jG1_QyTY",
+      "https://www.youtube.com/embed/oECbuG9kUIE",
+      "https://www.youtube.com/embed/n1Dw6QNHgTs",
+      "https://www.youtube.com/embed/wO3vergtOU4",
+      "https://www.youtube.com/embed/ymRdBVWC9hI"
+    ];
+
+    const reelsPerPage = 6;
+    let currentPage = 0;
+
+    function showPage(direction) {
+      currentPage += direction;
+      const container = document.getElementById("reels-container");
+      container.innerHTML = "";
+
+      const start = currentPage * reelsPerPage;
+      const end = Math.min(start + reelsPerPage, reelsData.length);
+
+      for (let i = start; i < end; i++) {
+        const item = document.createElement("div");
+        item.className = "portfolio-item";
+        item.innerHTML = `
+          <iframe src="${reelsData[i]}" title="Reels Video ${i + 1}"></iframe>
+          <p>Reels nomi yoki qisqacha izoh</p>
+        `;
+        container.appendChild(item);
+      }
+
+      document.getElementById("prevBtn").disabled = currentPage === 0;
+      document.getElementById("nextBtn").disabled = end >= reelsData.length;
+    }
+
+    window.addEventListener("DOMContentLoaded", () => showPage(0));
+  </script>
 </body>
 </html>
