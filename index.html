@@ -135,16 +135,45 @@
     </nav>
   </header>
 
-  <!-- REELS BO‘LIMI -->
+  <!-- YouTube videolar -->
+  <section class="section youtube" id="youtube">
+    <h2>YouTube videolar</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <iframe src="https://www.youtube.com/embed/7j6knFAcNNM" title="YouTube Video 1"></iframe>
+        <p><b>🎥Tadbirdan lavha | TOBB ETU</b><br>🔹 Ushbu video 2023-yilda TOBB ETU universitetida bo‘lib o‘tgan Career Day tadbirining muhitini yoritish uchun suratga olingan.</p>
+      </div>
+      <div class="portfolio-item">
+        <iframe src="https://www.youtube.com/embed/wPHxUXAhijI" title="YouTube Video 2"></iframe>
+        <p><b>🎥 Tibbiyot yo'nalishida | Intervyu</b><br>🔹 Genotexnologiya rahbari bilan intervyu, bir nechta kamera rakurslari va dron kadrlaridan foydalanilgan.</p>
+      </div>
+      <div class="portfolio-item">
+        <iframe src="https://www.youtube.com/embed/IcdLLzi0nFg" title="YouTube Video 3"></iframe>
+        <p><b>🎙 Jinsiy Zaiflik – Tibbiyot Podkasti</b><br>🔹 Minimalist vizual, professional audio va montaj bilan tayyorlangan podkast.</p>
+      </div>
+      <div class="portfolio-item">
+        <iframe src="https://www.youtube.com/embed/2rYjYmfIxfs" title="YouTube Video 4"></iframe>
+        <p><b>🎙 Micropenia – Tibbiyot Podkasti</b><br>🔹 Jiddiy atmosfera, sifatli audio va professional montaj.</p>
+      </div>
+      <div class="portfolio-item">
+        <iframe src="https://www.youtube.com/embed/I8W9BzgUuiE" title="YouTube Video 5"></iframe>
+        <p><b>🎙 Tez Bo‘shanib qo'yish – Tibbiyot Podkasti</b><br>🔹 Yakka spiker formati, yechimlar, professional audio va montaj.</p>
+      </div>
+      <div class="portfolio-item">
+        <iframe src="https://www.youtube.com/embed/90Yk8xTGTa4" title="YouTube Video 6"></iframe>
+        <p><b>🎬 Bolalar Uchun Kulgili Vlog</b><br>🔹 Bolalar tomonidan syomka qilingan, multfilm effektlari bilan boyitilgan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reels videolar -->
   <section class="section reels" id="reels">
     <h2>Reels videolar</h2>
-    <div class="portfolio-grid" id="reels-container">
-      <!-- Reels videolari JavaScript orqali joylanadi -->
-    </div>
+    <div class="portfolio-grid" id="reels-container"></div>
     <div class="pagination" id="pagination" style="text-align: center; margin-top: 30px;"></div>
   </section>
 
-  <!-- BRENDLAR -->
+  <!-- Brendlar -->
   <section class="section" id="brands">
     <h2>Men ishlagan brendlar</h2>
     <div class="brands-grid">
@@ -154,7 +183,7 @@
     </div>
   </section>
 
-  <!-- XIZMATLAR -->
+  <!-- Xizmatlar -->
   <section class="section services" id="services">
     <h2>🎬 Video syomka:</h2>
     <ul>
@@ -171,7 +200,7 @@
     </ul>
   </section>
 
-  <!-- BOG'LANISH -->
+  <!-- Bog‘lanish -->
   <section class="section contact" id="contact">
     <h2>Bog'lanish</h2>
     <a href="https://t.me/just_oripov">Telegram</a>
@@ -184,7 +213,7 @@
     <p>&copy; 2025 Just Oripov. Barcha huquqlar himoyalangan.</p>
   </footer>
 
-  <!-- REELS SCRIPT -->
+  <!-- Reels Script -->
   <script>
     const reelsData = [
       "https://www.youtube.com/embed/G79DJ8iReSE",
@@ -230,30 +259,21 @@
       const prevBtn = document.createElement("button");
       prevBtn.innerText = "←";
       prevBtn.disabled = currentPage === 0;
-      prevBtn.onclick = () => {
-        currentPage--;
-        renderReels();
-      };
+      prevBtn.onclick = () => { currentPage--; renderReels(); };
       pagination.appendChild(prevBtn);
 
       for (let i = 0; i < totalPages; i++) {
         const pageBtn = document.createElement("button");
         pageBtn.innerText = i + 1;
         if (i === currentPage) pageBtn.classList.add("active");
-        pageBtn.onclick = () => {
-          currentPage = i;
-          renderReels();
-        };
+        pageBtn.onclick = () => { currentPage = i; renderReels(); };
         pagination.appendChild(pageBtn);
       }
 
       const nextBtn = document.createElement("button");
       nextBtn.innerText = "→";
       nextBtn.disabled = currentPage === totalPages - 1;
-      nextBtn.onclick = () => {
-        currentPage++;
-        renderReels();
-      };
+      nextBtn.onclick = () => { currentPage++; renderReels(); };
       pagination.appendChild(nextBtn);
     }
 
