@@ -55,9 +55,6 @@
       width: 100%;
       border: none;
     }
-    .youtube iframe {
-      height: 200px;
-    }
     .reels iframe {
       width: 100%;
       max-width: 300px;
@@ -100,6 +97,28 @@
       background: #111;
       color: #fff;
     }
+    .pagination button {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 8px 14px;
+      margin: 0 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+    .pagination button.active {
+      background: #333;
+      color: #fff;
+    }
+    .pagination button:hover:not(.active) {
+      background-color: #eee;
+    }
+    .pagination button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
   </style>
 </head>
 <body>
@@ -116,30 +135,26 @@
     </nav>
   </header>
 
-  <!-- YouTube bo‘limini bu yerga joylaysiz -->
-
-  <!-- 🔻 REELS BO‘LIMI -->
+  <!-- REELS BO‘LIMI -->
   <section class="section reels" id="reels">
     <h2>Reels videolar</h2>
     <div class="portfolio-grid" id="reels-container">
       <!-- Reels videolari JavaScript orqali joylanadi -->
     </div>
-    <div style="text-align: center; margin-top: 20px;">
-      <button onclick="showPage(-1)" id="prevBtn" disabled>⬅️ Oldingi</button>
-      <button onclick="showPage(1)" id="nextBtn">Keyingi ➡️</button>
-    </div>
+    <div class="pagination" id="pagination" style="text-align: center; margin-top: 30px;"></div>
   </section>
 
+  <!-- BRENDLAR -->
   <section class="section" id="brands">
     <h2>Men ishlagan brendlar</h2>
     <div class="brands-grid">
       <img src="img/brand1.jpg" alt="Brand 1" class="brand-logo" />
       <img src="img/brand2.jpg" alt="Brand 2" class="brand-logo" />
       <img src="img/brand3.jpg" alt="Brand 3" class="brand-logo" />
-      <!-- Ko‘proq logolar qo‘shishingiz mumkin -->
     </div>
   </section>
 
+  <!-- XIZMATLAR -->
   <section class="section services" id="services">
     <h2>🎬 Video syomka:</h2>
     <ul>
@@ -156,6 +171,7 @@
     </ul>
   </section>
 
+  <!-- BOG'LANISH -->
   <section class="section contact" id="contact">
     <h2>Bog'lanish</h2>
     <a href="https://t.me/just_oripov">Telegram</a>
@@ -168,7 +184,7 @@
     <p>&copy; 2025 Just Oripov. Barcha huquqlar himoyalangan.</p>
   </footer>
 
-  <!-- 🔻 REELS NAVIGATION SCRIPT -->
+  <!-- REELS SCRIPT -->
   <script>
     const reelsData = [
       "https://www.youtube.com/embed/G79DJ8iReSE",
@@ -187,11 +203,9 @@
     const reelsPerPage = 6;
     let currentPage = 0;
 
-    function showPage(direction) {
-      currentPage += direction;
+    function renderReels() {
       const container = document.getElementById("reels-container");
       container.innerHTML = "";
-
       const start = currentPage * reelsPerPage;
       const end = Math.min(start + reelsPerPage, reelsData.length);
 
@@ -205,11 +219,45 @@
         container.appendChild(item);
       }
 
-      document.getElementById("prevBtn").disabled = currentPage === 0;
-      document.getElementById("nextBtn").disabled = end >= reelsData.length;
+      renderPagination();
     }
 
-    window.addEventListener("DOMContentLoaded", () => showPage(0));
+    function renderPagination() {
+      const pagination = document.getElementById("pagination");
+      pagination.innerHTML = "";
+      const totalPages = Math.ceil(reelsData.length / reelsPerPage);
+
+      const prevBtn = document.createElement("button");
+      prevBtn.innerText = "←";
+      prevBtn.disabled = currentPage === 0;
+      prevBtn.onclick = () => {
+        currentPage--;
+        renderReels();
+      };
+      pagination.appendChild(prevBtn);
+
+      for (let i = 0; i < totalPages; i++) {
+        const pageBtn = document.createElement("button");
+        pageBtn.innerText = i + 1;
+        if (i === currentPage) pageBtn.classList.add("active");
+        pageBtn.onclick = () => {
+          currentPage = i;
+          renderReels();
+        };
+        pagination.appendChild(pageBtn);
+      }
+
+      const nextBtn = document.createElement("button");
+      nextBtn.innerText = "→";
+      nextBtn.disabled = currentPage === totalPages - 1;
+      nextBtn.onclick = () => {
+        currentPage++;
+        renderReels();
+      };
+      pagination.appendChild(nextBtn);
+    }
+
+    window.addEventListener("DOMContentLoaded", () => renderReels());
   </script>
 </body>
 </html>
