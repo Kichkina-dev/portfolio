@@ -22,6 +22,11 @@
       margin: 0 15px;
       color: #fff;
       text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #00aced;
     }
     header img {
       width: 120px;
@@ -58,11 +63,9 @@
     .about-info {
       flex: 1;
     }
-    .about-info h3 {
-      margin-bottom: 10px;
-    }
-    .about-info ul {
-      padding-left: 20px;
+    .about-info p {
+      font-size: 18px;
+      line-height: 1.6;
     }
     .carousel {
       display: flex;
@@ -97,6 +100,23 @@
       border: none;
       border-radius: 6px;
     }
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
@@ -106,53 +126,51 @@
     <img src="img/profile.jpg" alt="Just Oripov" />
     <nav>
       <a href="index.html">Bosh sahifa</a>
-      <a href="#about-face">Men haqimda</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#contact">Bog'lanish</a>
     </nav>
   </header>
 
   <section class="section" id="about">
-    <h2>Brand Face haqida</h2>
+    <h2>Brand Face xizmati</h2>
     <div class="about-face">
       <img src="img/brandface_main.jpg" alt="Brand Face" />
       <div class="about-info">
-        <h3>Shaxsiy ma'lumotlar:</h3>
+        <p><b>Sizning brendingizga ishonchli, jonli, sotuvchan yuz kerakmi?</b> Menda bu borada kuchli tajriba, kameradagi tabiiy harakat, ishonchli gapirish va marketing ruhiyatini tushunish bor. Men sizning brendingiz uchun:</p>
         <ul>
-          <li><b>Ism:</b> Just Oripov</li>
-          <li><b>Yosh:</b> 31</li>
-          <li><b>Yashash joyi:</b> Toshkent, O‘zbekiston</li>
-          <li><b>Mutaxassislik:</b> Mobilograf, brend yuzlar uchun videokontent yaratuvchisi</li>
-          <li><b>Tajriba:</b> 9 yil biznesda, 5 yil marketing va kontentda</li>
-          <li><b>Maxsus yo‘nalish:</b> Tabiiy, ishonchli va professional brend yuz imijlari bilan ishlash</li>
+          <li>🎯 Real mijoz sifatida ishonchli tavsiyalar bilan chiqaman</li>
+          <li>🎥 Kamera oldida tabiiy, jozibali va ishonchli obraz yarataman</li>
+          <li>🚀 Brendingizni mijozga yaqinlashtiradigan chiqishlar qilaman</li>
+          <li>💼 Sizning mahsulotingiz yoki xizmatingizni jonlantiraman</li>
         </ul>
-        <p>Brend Face xizmatida men har bir mijozga individual yondashaman. Tashqi ko‘rinish, ohang, vizual stil va hikoya orqali brendga jon beraman.</p>
+        <p><i>Ishonch beruvchi so‘zlar, samimiy tabassum va kuchli chiqishlar orqali mijoz qalbini zabt etaman.</i></p>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2>Karusel – Brand Face namunalari</h2>
+    <h2>Video chiqishlarimdan namunalar</h2>
     <div class="carousel">
-      <img src="img/face1.jpg" alt="Brand Face 1" />
-      <img src="img/face2.jpg" alt="Brand Face 2" />
-      <img src="img/face3.jpg" alt="Brand Face 3" />
+      <img src="img/face1.jpg" alt="Chiqarilgan 1" />
+      <img src="img/face2.jpg" alt="Chiqarilgan 2" />
+      <img src="img/face3.jpg" alt="Chiqarilgan 3" />
     </div>
   </section>
 
   <section class="section" id="portfolio">
-    <h2>Brand Face video portfoliolar</h2>
+    <h2>Video Portfolio</h2>
     <div class="portfolio-grid">
       <div class="portfolio-item">
         <iframe src="https://www.youtube.com/embed/G79DJ8iReSE"></iframe>
-        <p>📹 Brend imij intervyusi</p>
+        <p>📹 Oziq-ovqat brendi uchun obrazli chiqish</p>
       </div>
       <div class="portfolio-item">
         <iframe src="https://www.youtube.com/embed/TaYM3tP1uWI"></iframe>
-        <p>📹 Reklama uchun brend yuzli syomka</p>
+        <p>📹 Mahalliy xizmat brendining yuzi sifatida</p>
       </div>
       <div class="portfolio-item">
         <iframe src="https://www.youtube.com/embed/ymRdBVWC9hI"></iframe>
-        <p>📹 Vizual brend hissi yaratish</p>
+        <p>📹 Ishonchli imidjni yaratish uchun chiqish</p>
       </div>
     </div>
   </section>
