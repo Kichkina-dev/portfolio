@@ -1,1 +1,0 @@
-const categoryApiUrl = "http://193.188.23.254:8000//api/categories/"

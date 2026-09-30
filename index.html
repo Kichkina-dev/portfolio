@@ -1,335 +1,193 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Just Oripov - Portfolio</title>
-  <link rel="shortcut icon" href="./img/profile.jpg" type="image/x-icon">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #fff;
-      text-decoration: none;
-    }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-top: 10px;
-      object-fit: cover;
-    }
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .section h2 {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .portfolio-item {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    iframe {
-      width: 100%;
-      border: none;
-    }
-    .reels iframe {
-      width: 100%;
-      max-width: 300px;
-      height: 533px;
-      border-radius: 10px;
-      margin: 0 auto;
-      display: block;
-    }
-    .brands-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .brand-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      object-fit: cover;
-      object-position: center; 
-    }
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-    .services li {
-      margin-bottom: 10px;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      color: #0066cc;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #fff;
-    }
-    .pagination button {
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 8px 14px;
-      margin: 0 5px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      color: #333;
-      transition: all 0.3s ease;
-    }
-    .pagination button.active {
-      background: #333;
-      color: #fff;
-    }
-    .pagination button:hover:not(.active) {
-      background-color: #eee;
-    }
-    .pagination button:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Just Oripov — videograf va montajchi</title>
+  <meta name="description" content="Just Oripov — videograf va montajchi. Reklama, podkast, vlog va reels: syomkadan tortib tayyor montajgacha.">
+  <meta name="theme-color" content="#0c0c0e">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://just-portfolio.netlify.app/">
+  <meta property="og:title" content="Just Oripov — videograf va montajchi">
+  <meta property="og:description" content="Reklama, podkast, vlog va reels. 17 ta brend bilan ishlaganman.">
+  <meta property="og:image" content="https://just-portfolio.netlify.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Just Oripov</h1>
-    <p>Tez, sifat, kreativ bo'lishini yaxshi ko'raman!</p>
-    <img src="img/profile.jpg" alt="Just Oripov" />
-    <nav>
-      <a href="#youtube">YouTube</a>
-      <a href="#reels">Reels</a>
-      <a href="#brands">Brendlar</a>
-      <a href="#services">Xizmatlar</a>
-      <a href="face.html">Foto portfolio</a>
-      <a href="#contact">Bog'lanish</a>
+
+  <!-- Liquid glass uchun SVG filtrlar (JS har bir element o'lchamiga moslab to'ldiradi) -->
+  <svg class="sr-only" aria-hidden="true" width="0" height="0"><defs id="lens-defs"></defs></svg>
+
+  <header class="topbar">
+    <nav class="nav glass" data-lens aria-label="Asosiy menyu" data-i18n-aria="nav.label">
+      <a class="nav-brand" href="#top">
+        <img src="img/avatar.webp" alt="" width="32" height="32">
+        <span>Just Oripov</span>
+      </a>
+      <div class="nav-links">
+        <a href="#works" data-i18n="nav.works">Ishlar</a>
+        <a href="#reels">Reels</a>
+        <a href="#brands" data-i18n="nav.brands">Brendlar</a>
+        <a href="#services" data-i18n="nav.services">Xizmatlar</a>
+      </div>
+      <div class="lang" role="group" aria-label="Til / Язык / Language">
+        <button type="button" data-lang="uz" aria-pressed="true">UZ</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-rec" href="https://t.me/just_oripov" target="_blank" rel="noopener">
+        <span class="rec-dot"></span><span data-i18n="nav.write">Yozish</span>
+      </a>
     </nav>
   </header>
 
-  <!-- YouTube videolar -->
-  <section class="section youtube" id="youtube">
-    <h2>YouTube videolar</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/wPHxUXAhijI" title="YouTube Video 2"></iframe>
-        <p><b>🎥 Tibbiyot yo'nalishida | Intervyu</b><br>🔹 Genotexnologiya rahbari bilan intervyu, bir nechta kamera rakurslari va dron kadrlaridan foydalanilgan.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/IcdLLzi0nFg" title="YouTube Video 3"></iframe>
-        <p><b>🎙 Jinsiy Zaiflik – Tibbiyot Podkasti</b><br>🔹 Minimalist vizual, professional audio va montaj bilan tayyorlangan podkast.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/5T9vXyLld4U?si=QpBj4a6l1yoEOrtS" title="YouTube Video 4"></iframe>
-        <p><b>🎥 KOSMOSGA VARRAK UCHIRDILDI! VLOG</b><br>🔹 Bu yo'nalishda birinchi ishlarimdan biri. Meme va dinamika bilan ishlandi</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/I8W9BzgUuiE" title="YouTube Video 5"></iframe>
-        <p><b>🎙 Tez Bo‘shanib qo'yish – Tibbiyot Podkasti</b><br>🔹 Yakka spiker formati, yechimlar, professional audio va montaj.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/90Yk8xTGTa4" title="YouTube Video 6"></iframe>
-        <p><b>🎬 Bolalar Uchun Kulgili Vlog</b><br>🔹 Bolalar tomonidan syomka qilingan, multfilm effektlari bilan boyitilgan.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/J9l8go0I5e4" title="YouTube Video 6"></iframe>
-        <p><b>🎬 Uy sotmoqchi bo'lganlar diqqatiga!</b><br>🔹 Umumiy video tayyor bo'lishiga 6soat vaqt ketgan. <br> 🔹 Video qo'yilgandan so'ng uy bir kun ichida o'z egasini topgan.</p>
-      </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/BKe_Tb_hjyE" title="YouTube Video 6"></iframe>
-        <p><b>🎬 Harry Thompson "THOMPSON"ning OYBEK fillialida</b><br>🔹 VLOG yo'nalishida olingan video. <br> 🔹 Video umumiy tayyor bo'lishiga 12soat vaqt ketgan.</p>
-      </div>
-    </div>
-  </section>
+  <main id="top">
 
-  <!-- Reels videolar -->
-  <section class="section reels" id="reels">
-    <h2>Reels videolar</h2>
-    <div class="portfolio-grid" id="reels-container"></div>
-    <div class="pagination" id="pagination" style="text-align: center; margin-top: 30px;"></div>
-  </section>
-  <section class="section ai" id="ai">
-    <h2>AI videolar</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/6PnXHLZdyrE" title="YouTube Video 1"></iframe>
-        <p><b>🎥 O'zim uchun qilingan lirik klip 100% AIda qilingan</b><br>🔹 GROK AI, CHATGPT, GEMINI va yana qo'shimcha yordamchi su'niy intellektlar ishlatilgan</p>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-reel" aria-hidden="true">
+        <div class="reel-row" data-speed="70"></div>
+        <div class="reel-row reverse" data-speed="90"></div>
+        <div class="reel-row" data-speed="60"></div>
       </div>
-      <div class="portfolio-item">
-        <iframe src="https://www.youtube.com/embed/S2YfeWhOH3s" title="YouTube Video 2"></iframe>
-        <p><b>🎥 aRZON LABOIRATORIYA UCHUN QILINGAN VIDEO</b><br>🔹 GROK AI, CHATGPT, GEMINI va yana qo'shimcha yordamchi su'niy intellektlar ishlatilgan</p>
+      <div class="hero-shade"></div>
+
+      <div class="hero-inner">
+        <div class="hero-meta mono">
+          <span class="rec"><span class="rec-dot"></span>REC</span>
+          <span id="timecode">00:00:00:00</span>
+        </div>
+        <h1 class="hero-title">Just<br>Oripov</h1>
+        <p class="hero-lead" data-i18n="hero.lead">Videograf va montajchi. Tez, sifat, kreativ bo‘lishini yaxshi ko‘raman!</p>
+        <div class="hero-cta">
+          <a class="btn btn-light glass" data-lens href="#works" data-i18n="hero.cta">Ishlarni ko‘rish</a>
+          <a class="btn btn-ghost" href="https://t.me/just_oripov" target="_blank" rel="noopener">@just_oripov</a>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- AI videolar-->
+      <dl class="hero-stats glass" data-lens>
+        <div><dt>17</dt><dd data-i18n="stats.brands">brend bilan ishlaganman</dd></div>
+        <div><dt>27+</dt><dd data-i18n="stats.videos">tayyor video shu sahifada</dd></div>
+        <div><dt data-i18n="stats.day">1 kun</dt><dd data-i18n="stats.house">reklamadan keyin uy sotildi</dd></div>
+      </dl>
+    </section>
 
-  <section class="section" id="brands">
-    <h2>Men ishlagan brendlar</h2>
-    <div class="brands-grid">
-      <img src="img/channels4_profile.jpg" alt="Brand 10" class="brand-logo" />
-      <img src="img/brand4.jpg" alt="Brand 4" class="brand-logo" />
-      <img src="img/brand10.jpg" alt="Brand 10" class="brand-logo" />
-      <img src="img/photo_2025-12-16_14-03-04.jpg" alt="Brand 9" class="brand-logo" />
-      <img src="img/brand5.jpg" alt="Brand 5" class="brand-logo" />
-      <img src="img/brand6.jpg" alt="Brand 6" class="brand-logo" />
-      <img src="img/unnamed.png" alt="Brand 10" class="brand-logo" />
-      <img src="img/brand1.jpg" alt="Brand 1" class="brand-logo" />
-      <img src="img/brand2.jpg" alt="Brand 2" class="brand-logo" />
-      <img src="img/brand3.jpg" alt="Brand 3" class="brand-logo" />
-      <img src="img/brand7.jpg" alt="Brand 7" class="brand-logo" />
-      <img src="img/brand8.jpg" alt="Brand 8" class="brand-logo" />
-      <img src="img/brand9.jfif" alt="Brand 9" class="brand-logo" />
-      <img src="img/image.png" alt="Brand 10" class="brand-logo" />
-      <img src="img/д9.png" alt="Brand 11" class="brand-logo" />
-      <img src="img/Безымянный-2.png" alt="Brand 12" class="brand-logo" />
-      <img src="img/Все логотипы компаний2.png" alt="Brand 13" class="brand-logo"/>
+    <!-- ISHLAR -->
+    <section class="section" id="works">
+      <div class="section-head">
+        <span class="mono section-tc" data-i18n="works.tc">01 — Ishlar</span>
+        <h2 data-i18n="works.h">Tanlangan videolar</h2>
+      </div>
 
-    </div>
-  </section>
-<!--
-  <section class="section services" id="services">
-    <h2>🎬 Video syomka:</h2>
-    <ul>
-      <li>Mobilograf (telefon bilan) – 1 soat: 150,000 so‘m</li>
-      <li>Professional kamera bilan – 1 soat: 300,000 so‘m</li>
-      <li>To‘liq kunlik syomka (8 soatgacha) – 2,000,000 so‘m</li>
-    </ul>
-    <h2>🎙️ Podcast syomkasi:</h2>
-    <ul>
-      <li>1 ta kamera bilan – 1 soat: 400,000 so‘m</li>
-      <li>2 ta kamera bilan (multicam) – 1 soat: 600,000 so‘m</li>
-      <li>Audio yozib olish – 1 soat: 300,000 so‘m</li>
-      <li>To‘liq xizmat – 1 soat: 900,000 so‘m</li>
-    </ul>
-    <h2>✂️ Montaj xizmati:</h2>
-    <ul>
-      <li>Qisqa video (1 daqiqagacha) – 200,000 so‘m</li>
-      <li>To‘liq montaj (5–10 daqiqa) – 500,000 so‘m</li>
-      <li>Podcast montaji – 600,000 so‘m</li>
-      <li>Reklama, klip yoki maxsus loyiha – Narx kelishiladi</li>
-    </ul>
-    <h2>🚀 Qo‘shimcha xizmatlar:</h2>
-    <ul>
-      <li>Drondan foydalanish – Narx kelishiladi</li>
-      <li>Tezkor montaj – +50% qo‘shimcha to‘lov</li>
-      <li>Ssenariy yozish – 300,000 so‘m</li>
-    </ul>
-  </section>
--->
-  <section class="section contact" id="contact">
-    <h2>Bog'lanish</h2>
-    <a href="https://t.me/just_oripov">Telegram</a>
-    <a href="https://instagram.com/just.oripov">Instagram</a>
-    <a href="mailto:kichkina.developer@gmail.com">Email</a>
-    <a href="tel:+998993630504">Telefon</a>
-  </section>
+      <div class="segmented glass" data-lens role="tablist" aria-label="Kategoriya" data-i18n-aria="works.filter">
+        <span class="seg-thumb" aria-hidden="true"></span>
+        <button role="tab" aria-selected="true" data-filter="all" data-i18n="f.all">Hammasi</button>
+        <button role="tab" aria-selected="false" data-filter="podkast" data-i18n="f.podkast">Podkast</button>
+        <button role="tab" aria-selected="false" data-filter="vlog" data-i18n="f.vlog">Vlog</button>
+        <button role="tab" aria-selected="false" data-filter="reklama" data-i18n="f.reklama">Reklama</button>
+        <button role="tab" aria-selected="false" data-filter="ai">AI</button>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 Just Oripov. Barcha huquqlar himoyalangan.</p>
+      <div class="works-grid" id="works-grid"></div>
+    </section>
+
+    <!-- REELS -->
+    <section class="section" id="reels">
+      <div class="section-head row">
+        <div>
+          <span class="mono section-tc">02 — Reels</span>
+          <h2 data-i18n="reels.h">Vertikal videolar</h2>
+        </div>
+        <div class="reels-nav">
+          <button class="icon-btn glass" data-lens data-dir="-1" aria-label="Oldingi" data-i18n-aria="reels.prev">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="icon-btn glass" data-lens data-dir="1" aria-label="Keyingi" data-i18n-aria="reels.next">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="reels-track" id="reels-track"></div>
+    </section>
+
+    <!-- BRENDLAR -->
+    <section class="section" id="brands">
+      <div class="section-head">
+        <span class="mono section-tc" data-i18n="brands.tc">03 — Brendlar</span>
+        <h2 data-i18n="brands.h">Men ishlagan brendlar</h2>
+      </div>
+      <div class="marquee" id="brands-marquee"></div>
+    </section>
+
+    <!-- XIZMATLAR -->
+    <section class="section" id="services">
+      <div class="section-head">
+        <span class="mono section-tc" data-i18n="services.tc">04 — Xizmatlar</span>
+        <h2 data-i18n="services.h">Nima qila olaman</h2>
+      </div>
+      <div class="services">
+        <article class="service">
+          <h3 data-i18n="s1.h">Video syomka</h3>
+          <ul>
+            <li data-i18n="s1.1">Telefon bilan mobilografiya</li>
+            <li data-i18n="s1.2">Professional kamera bilan syomka</li>
+            <li data-i18n="s1.3">To‘liq kunlik syomka, 8 soatgacha</li>
+            <li data-i18n="s1.4">Dron kadrlari</li>
+          </ul>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s2.h">Podkast</h3>
+          <ul>
+            <li data-i18n="s2.1">1 yoki 2 kamerali (multicam) syomka</li>
+            <li data-i18n="s2.2">Ovoz yozib olish</li>
+            <li data-i18n="s2.3">Syomkadan montajgacha to‘liq xizmat</li>
+          </ul>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s3.h">Montaj</h3>
+          <ul>
+            <li data-i18n="s3.1">Reels va qisqa videolar</li>
+            <li data-i18n="s3.2">5–10 daqiqalik to‘liq montaj</li>
+            <li data-i18n="s3.3">Reklama, klip va maxsus loyihalar</li>
+            <li data-i18n="s3.4">Ssenariy yozish</li>
+          </ul>
+        </article>
+      </div>
+      <p class="services-note" data-i18n="services.note">Narx loyiha hajmiga qarab kelishiladi. Shoshilinch buyurtmalarni ham olaman.</p>
+    </section>
+
+    <!-- BOG'LANISH -->
+    <section class="section" id="contact">
+      <div class="contact glass">
+        <span class="mono section-tc" data-i18n="contact.tc">05 — Bog‘lanish</span>
+        <h2 data-i18n="contact.h">Loyihangiz bormi?<br>Yozing, gaplashamiz.</h2>
+        <div class="contact-links">
+          <a class="btn btn-rec big" href="https://t.me/just_oripov" target="_blank" rel="noopener"><span class="rec-dot"></span>Telegram</a>
+          <a class="btn btn-ghost big" href="https://instagram.com/just.oripov" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-ghost big" href="tel:+998993630504">+998 99 363 05 04</a>
+          <a class="btn btn-ghost big" href="mailto:kichkina.developer@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <span>© <span id="year">2026</span> Just Oripov</span>
+    <a href="#top" data-i18n="footer.top">Yuqoriga ↑</a>
   </footer>
 
-  <!-- Reels Script -->
-  <script>
-    const reelsData = [
-      "https://www.youtube.com/embed/oECbuG9kUIE",
-      "https://www.youtube.com/embed/LWRX38GHsoc",
-      "https://www.youtube.com/embed/fLQTd992m6A",
-      "https://www.youtube.com/embed/ANT09EWNwas",
-      "https://www.youtube.com/embed/zDWzJgxuUPg",
-      "https://www.youtube.com/embed/OMjC1cn5uxY",
-      "https://www.youtube.com/embed/PvdqFrQkjx8",
-      "https://www.youtube.com/embed/OetwkS3tFLM",
-      "https://www.youtube.com/embed/YPyzox7sGSA",
-      "https://www.youtube.com/embed/tkmWYzdh4Sk",
-      "https://www.youtube.com/embed/P229zCsy4Oo",
-      "https://www.youtube.com/embed/-Oo7ZKHZbEI",
-      "https://www.youtube.com/embed/WHgrGC3pg7g",
-      "https://www.youtube.com/embed/Gx2kp4IYI3A",
-      "https://www.youtube.com/embed/IFynvIgXiyg",
-      "https://www.youtube.com/embed/5rYfS4VPjNQ",
-      "https://www.youtube.com/embed/IrwZTVFlUOw",
-      "https://www.youtube.com/embed/k2IcoaODTPE"
-    ];
-
-    const reelsPerPage = 6;
-    let currentPage = 0;
-
-    function renderReels() {
-      const container = document.getElementById("reels-container");
-      container.innerHTML = "";
-      const start = currentPage * reelsPerPage;
-      const end = Math.min(start + reelsPerPage, reelsData.length);
-
-      for (let i = start; i < end; i++) {
-        const item = document.createElement("div");
-        item.className = "portfolio-item";
-        item.innerHTML = `
-          <iframe src="${reelsData[i]}" title="Reels Video ${i + 1}"></iframe>
-        `;
-        container.appendChild(item);
-      }
-
-      renderPagination();
-    }
-
-    function renderPagination() {
-      const pagination = document.getElementById("pagination");
-      pagination.innerHTML = "";
-      const totalPages = Math.ceil(reelsData.length / reelsPerPage);
-
-      const prevBtn = document.createElement("button");
-      prevBtn.innerText = "←";
-      prevBtn.disabled = currentPage === 0;
-      prevBtn.onclick = () => { currentPage--; renderReels(); };
-      pagination.appendChild(prevBtn);
-
-      for (let i = 0; i < totalPages; i++) {
-        const pageBtn = document.createElement("button");
-        pageBtn.innerText = i + 1;
-        if (i === currentPage) pageBtn.classList.add("active");
-        pageBtn.onclick = () => { currentPage = i; renderReels(); };
-        pagination.appendChild(pageBtn);
-      }
-
-      const nextBtn = document.createElement("button");
-      nextBtn.innerText = "→";
-      nextBtn.disabled = currentPage === totalPages - 1;
-      nextBtn.onclick = () => { currentPage++; renderReels(); };
-      pagination.appendChild(nextBtn);
-    }
-
-    window.addEventListener("DOMContentLoaded", () => renderReels());
-  </script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
